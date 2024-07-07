@@ -24,3 +24,14 @@ fn main() {
     println!("{:#?}",json_parser_simple::json_scan(&String::from(json_str)));
 }
 ```
+json scan returns ->
+```rust
+pub enum JsonValue {
+    Object(HashMap<String, JsonValue>),
+    Array(Vec<JsonValue>),
+    String(String),
+    Number(f64),
+    Bool(bool),
+    Null,
+}
+```
