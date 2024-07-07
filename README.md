@@ -1,6 +1,9 @@
 # json_parser
 simple lib to convert json to hashmap in Rustlang
 
+## install
+https://crates.io/crates/json_parser_simple
+
 ## example :
 ```rust
 use json_parser_simple;
