@@ -38,6 +38,7 @@ fn parse_object(value: &str) -> JsonValue {
     let mut key = String::new();
     let mut val = String::new();
     let mut in_key = true;
+    let mut in_string = false;
     let mut depth = 0;
     let mut chars = value.chars().peekable();
 
@@ -73,7 +74,7 @@ fn parse_object(value: &str) -> JsonValue {
                     }
                 }
             }
-            ':' if depth == 0 => {
+            ':' if depth == 0 && in_key => {
                 in_key = false;
             }
             ',' if depth == 0 => {
